@@ -48,13 +48,12 @@ public class ControleDeJogo {
                          case 0:
                              eTemp.moveUp();
                              if(ehPosicaoValida(e,eTemp.getPosicao() , -1)){
-                                 
-                                 break;
+                                break;
                              }
                              else{
-                                 e.remove(eTemp);
+                                 eTemp.moveDown();
+                                 return false;
                              }
-                             break;
                          case 1:
                              eTemp.moveDown();
                              if(ehPosicaoValida(e,eTemp.getPosicao() , -1)){
@@ -83,7 +82,7 @@ public class ControleDeJogo {
                              }
                              break;     
                     }
-                    return true;
+                     return true;
                     }
                    
                     return false; /*A posicao p é invalida, pois ha um elemento (i-esimo eTemp) intransponivel lá*/

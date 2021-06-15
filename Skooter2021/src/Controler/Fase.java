@@ -45,12 +45,12 @@ public class Fase extends ArrayList<Elemento>{
             this.add(new QuadradoVermelho(new Posicao(12,i)));
         
         //adicionando as frutas
-        //this.add(new FrutaColecionavel(new Posicao(1,1)));
-        //this.add(new FrutaColecionavel(new Posicao(1,11)));
-        //this.add(new FrutaColecionavel(new Posicao(11,1)));
-        //this.add(new FrutaColecionavel(new Posicao(11,11)));
+        this.add(new FrutaColecionavel(new Posicao(1,1)));
+        this.add(new FrutaColecionavel(new Posicao(1,11)));
+        this.add(new FrutaColecionavel(new Posicao(11,1)));
+        this.add(new FrutaColecionavel(new Posicao(11,11)));
         
-        //this.add(new QuadradoVerde(new Posicao(0,0)));
+        this.add(new QuadradoVerde(new Posicao(0,0)));
         
         //adicionar os blocos vermelhos
         for(int j=2;j<11;j=j+2)
@@ -114,6 +114,7 @@ public class Fase extends ArrayList<Elemento>{
         this.add(new QuadradoVerde(new Posicao(0,12)));
         this.add(new QuadradoVerde(new Posicao(12,0)));
         this.add(new QuadradoVerde(new Posicao(12,12)));
+        this.add(new QuadradoVerde(new Posicao(6,6)));
         //borda vermelha
         for(int i=1;i<12;i++)
             this.add(new QuadradoVermelho(new Posicao(i,0)));

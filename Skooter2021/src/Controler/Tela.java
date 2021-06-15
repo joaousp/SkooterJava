@@ -87,6 +87,16 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         if (!this.eElementos.isEmpty()) {
             this.cControle.desenhaTudo(eElementos);
             this.cControle.processaTudo(eElementos);
+            if (!cControle.ehPosicaoMortal(this.eElementos,hHero.getPosicao())) {
+            this.eElementos.clear();
+            hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+            hHero.setPosicao(5,5 );
+            this.addElemento(hHero);
+            minhaFase= new Fase(100);
+            minhaFase.setFase1(hHero);
+            eElementos = minhaFase;
+            nivelFase=1;
+            }
             if(!this.cControle.hasColecionaveisAinda(eElementos)&&nivelFase==1){
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
@@ -156,6 +166,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
             minhaFase= new Fase(100);
             minhaFase.setFase1(hHero);
             eElementos = minhaFase;
+            nivelFase=1;
         }
         
         /*Se o heroi for para uma posicao invalida, sobre um elemento intransponivel, volta para onde estava*/

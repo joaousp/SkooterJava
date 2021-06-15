@@ -22,12 +22,14 @@ public abstract class Elemento implements Serializable {
     protected boolean bTransponivel; /*Pode passar por cima?*/
     protected boolean bMortal;       /*Se encostar, morre?*/
     protected boolean pMovivel;
+    protected boolean pHero; // É o heroi?
        
     protected Elemento(String sNomeImagePNG) {
         this.pPosicao = new Posicao(1, 1);
         this.bTransponivel = true;
         this.bMortal = false;
         this.pMovivel = false;
+        this.pHero = false;
         try {
             iImage = new ImageIcon(new java.io.File(".").getCanonicalPath() + Consts.PATH + sNomeImagePNG);
             Image img = iImage.getImage();
@@ -51,6 +53,10 @@ public abstract class Elemento implements Serializable {
 
     public boolean ispMovivel() {
         return pMovivel;
+    }
+    
+    public boolean ispHero(){
+        return pHero;
     }
 
     public void setpMovivel(boolean pMovivel) {
