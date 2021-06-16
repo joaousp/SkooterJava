@@ -48,6 +48,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         minhaFase= new Fase(100);
         minhaFase.setFase1(hHero);
         eElementos = minhaFase;
+        
 
     }
     
@@ -87,20 +88,22 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         if (!this.eElementos.isEmpty()) {
             this.cControle.desenhaTudo(eElementos);
             this.cControle.processaTudo(eElementos);
+            
             if (!cControle.ehPosicaoMortal(this.eElementos,hHero.getPosicao())) {
-            this.eElementos.clear();
-            hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
-            hHero.setPosicao(5,5 );
-            this.addElemento(hHero);
-            minhaFase= new Fase(100);
-            minhaFase.setFase1(hHero);
-            eElementos = minhaFase;
-            nivelFase=1;
+                this.eElementos.clear();
+                hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
+                hHero.setPosicao(5,5 );
+                this.addElemento(hHero);
+                minhaFase= new Fase(100);
+                minhaFase.setFase1(hHero);
+                eElementos = minhaFase;
+                nivelFase=1;
             }
+            //TODO mudar hasColecionaveisAinda
             if(!this.cControle.hasColecionaveisAinda(eElementos)&&nivelFase==1){
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
-                hHero.setPosicao(5,5);
+                hHero.setPosicao(5,5 );
                 this.addElemento(hHero);
                 minhaFase= new Fase(100);
                 minhaFase.setFase2(hHero);
@@ -108,7 +111,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
                 nivelFase=2;
                 
             }
-            /*
+            
             if(!this.cControle.hasRecompensaFase2(eElementos)&&nivelFase==2){
                      
                 this.eElementos.clear();
@@ -120,8 +123,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
                 eElementos = minhaFase;
                 nivelFase=3;
             }
-            */
-            
+            //TODO concertar isso
             if(!this.cControle.hasColecionaveisAinda(eElementos)&&nivelFase==3){
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
@@ -132,6 +134,8 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
                 eElementos = minhaFase;
                 nivelFase=4;
             }
+
+            
             
         }
 
@@ -193,9 +197,21 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         }
         if (!cControle.ehPosicaoValida(this.eElementos,hHero.getPosicao(),tecla)) {
             hHero.voltaAUltimaPosicao();
+            
+        }
+        int direcao=cControle.ehBlocoMovimento(this.eElementos,hHero.getPosicao());
+        
+        //vou trabalhar da mesma forma que nos jogos de pokemon, pisou no bloco vai ate o fim;
+        while (direcao!=0) {
+            
+            if(direcao==1)hHero.moveUp();
+            if(direcao==2)hHero.moveDown();
+            if(direcao==3)hHero.moveLeft();
+            if(direcao==4)hHero.moveRight();
+            direcao=cControle.ehBlocoMovimento(this.eElementos,hHero.getPosicao());
+                       
         }
         
-
         this.setTitle("-> Cell: " + (hHero.getPosicao().getColuna()) + ", " + (hHero.getPosicao().getLinha()));
     }
 

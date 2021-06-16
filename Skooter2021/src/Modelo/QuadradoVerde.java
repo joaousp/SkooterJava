@@ -27,6 +27,7 @@ public class QuadradoVerde extends Elemento {
         if(!Desenhador.getTelaDoJogo().ehPosicaoValidaRelativaAUmPersonagem(this)){
             //TODO apagar aqui;
             setPosicao(new Posicao(0,0));
+            
         }
 
         super.autoDesenho();

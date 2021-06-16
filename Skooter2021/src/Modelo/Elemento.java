@@ -22,14 +22,26 @@ public abstract class Elemento implements Serializable {
     protected boolean bTransponivel; /*Pode passar por cima?*/
     protected boolean bMortal;       /*Se encostar, morre?*/
     protected boolean pMovivel;
+    protected boolean pNaoRemovivel;
+    protected boolean moverCima;
+    protected boolean moverBaixo;
+    protected boolean moverEsquerda;
+    protected boolean moverDireita;
     protected boolean pHero; // É o heroi?
-       
+    //TODO colocar um boolean ehcolecionavel
+    
     protected Elemento(String sNomeImagePNG) {
         this.pPosicao = new Posicao(1, 1);
         this.bTransponivel = true;
         this.bMortal = false;
         this.pMovivel = false;
+        this.pNaoRemovivel = false;
         this.pHero = false;
+        
+        this.moverCima = false;
+        this.moverBaixo = false;
+        this.moverEsquerda = false;
+        this.moverDireita = false;
         try {
             iImage = new ImageIcon(new java.io.File(".").getCanonicalPath() + Consts.PATH + sNomeImagePNG);
             Image img = iImage.getImage();
@@ -41,7 +53,55 @@ public abstract class Elemento implements Serializable {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public boolean ispHero(){
+        return pHero;
+    }
 
+    public boolean isMoverCima() {
+        return moverCima;
+    }
+
+    public void setMoverCima(boolean moverCima) {
+        this.moverCima = moverCima;
+    }
+
+    public boolean isMoverBaixo() {
+        return moverBaixo;
+    }
+
+    public void setMoverBaixo(boolean moverBaixo) {
+        this.moverBaixo = moverBaixo;
+    }
+
+    public boolean isMoverEsquerda() {
+        return moverEsquerda;
+    }
+
+    public void setMoverEsquerda(boolean moverEsquerda) {
+        this.moverEsquerda = moverEsquerda;
+    }
+
+    public boolean isMoverDireita() {
+        return moverDireita;
+    }
+
+    public void setMoverDireita(boolean moverDireita) {
+        this.moverDireita = moverDireita;
+    }
+    
+    
+
+    public boolean ispNaoRemovivel() {
+        return pNaoRemovivel;
+    }
+
+    public void setpNaoRemovivel(boolean pNaoRemovivel) {
+        this.pNaoRemovivel = pNaoRemovivel;
+    }
+
+    
+    
     public boolean isbMortal() {
         return bMortal;
     }
@@ -53,10 +113,6 @@ public abstract class Elemento implements Serializable {
 
     public boolean ispMovivel() {
         return pMovivel;
-    }
-    
-    public boolean ispHero(){
-        return pHero;
     }
 
     public void setpMovivel(boolean pMovivel) {

@@ -11,9 +11,9 @@ import Auxiliar.Posicao;
  *
  * @author joaom
  */
-public class RecompensaFase2 extends Elemento{
-     public RecompensaFase2(Posicao umaPosicao){
-        super("cereja.png");
+public class RecompensaFase4 extends Elemento{
+     public RecompensaFase4(Posicao umaPosicao){
+        super("limao.png");
         this.setPosicao(umaPosicao);
         bTransponivel=true;
     }
