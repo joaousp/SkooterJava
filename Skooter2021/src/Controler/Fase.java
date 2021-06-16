@@ -11,6 +11,7 @@ import Modelo.FrutaColecionavel;
 import Modelo.Hero;
 import Modelo.QuadradoVerde;
 import Modelo.QuadradoVermelho;
+import Modelo.QuadradoVerdeLiso;
 import Modelo.RecompensaFase2;
 import Modelo.RoboAmarelo;
 import Modelo.RoboAzul;
@@ -45,10 +46,10 @@ public class Fase extends ArrayList<Elemento>{
             this.add(new QuadradoVermelho(new Posicao(12,i)));
         
         //adicionando as frutas
-        this.add(new FrutaColecionavel(new Posicao(1,1)));
-        this.add(new FrutaColecionavel(new Posicao(1,11)));
-        this.add(new FrutaColecionavel(new Posicao(11,1)));
-        this.add(new FrutaColecionavel(new Posicao(11,11)));
+        //this.add(new FrutaColecionavel(new Posicao(1,1)));
+        //this.add(new FrutaColecionavel(new Posicao(1,11)));
+        //this.add(new FrutaColecionavel(new Posicao(11,1)));
+        //this.add(new FrutaColecionavel(new Posicao(11,11)));
         
         this.add(new QuadradoVerde(new Posicao(0,0)));
         
@@ -160,9 +161,102 @@ public class Fase extends ArrayList<Elemento>{
         this.add(new QuadradoVerde(new Posicao(0,12)));
         this.add(new QuadradoVerde(new Posicao(12,0)));
         this.add(new QuadradoVerde(new Posicao(12,12)));
-        //this.add(new FrutaColecionavel(new Posicao(1,1)));
+        this.add(new FrutaColecionavel(new Posicao(1,1)));
         this.add(new FrutaColecionavel(new Posicao(1,2)));
         
+    }
+    
+    public void setFase4(Hero umHero){
+        this.clear();
+        this.add(umHero);
+ 
+        //fazendo a bordinha
+        this.add(new QuadradoVerde(new Posicao(0,0)));
+        this.add(new QuadradoVerde(new Posicao(0,12)));
+        this.add(new QuadradoVerde(new Posicao(12,0)));
+        this.add(new QuadradoVerde(new Posicao(12,12)));
+        
+        //borda vermelha
+        for(int i=1;i<12;i++)
+            this.add(new QuadradoVermelho(new Posicao(i,0)));
+        for(int i=1;i<12;i++)
+            this.add(new QuadradoVermelho(new Posicao(i,12)));
+        for(int i=1;i<12;i++)
+            this.add(new QuadradoVermelho(new Posicao(0,i)));
+        for(int i=1;i<12;i++)
+            this.add(new QuadradoVermelho(new Posicao(12,i)));
+        
+        // Quadrados Vermelhos
+        this.add(new QuadradoVermelho(new Posicao(1,4)));
+        this.add(new QuadradoVermelho(new Posicao(1,8)));
+        this.add(new QuadradoVermelho(new Posicao(2,1)));
+        this.add(new QuadradoVermelho(new Posicao(2,9)));
+        this.add(new QuadradoVermelho(new Posicao(3,6)));
+        this.add(new QuadradoVermelho(new Posicao(4,3)));
+        this.add(new QuadradoVermelho(new Posicao(4,11)));
+        this.add(new QuadradoVermelho(new Posicao(6,3)));
+        this.add(new QuadradoVermelho(new Posicao(6,9)));
+        this.add(new QuadradoVermelho(new Posicao(7,4)));
+        this.add(new QuadradoVermelho(new Posicao(8,1)));
+        this.add(new QuadradoVermelho(new Posicao(9,2)));
+        this.add(new QuadradoVermelho(new Posicao(9,8)));
+        this.add(new QuadradoVermelho(new Posicao(9,11)));
+        this.add(new QuadradoVermelho(new Posicao(11,2)));
+        
+       // Quadrados Verdes
+       this.add(new QuadradoVerdeLiso(new Posicao(2,2)));
+       this.add(new QuadradoVerdeLiso(new Posicao(2,4)));
+       this.add(new QuadradoVerdeLiso(new Posicao(2,6)));
+       this.add(new QuadradoVerdeLiso(new Posicao(2,8)));
+       this.add(new QuadradoVerdeLiso(new Posicao(2,10)));
+       this.add(new QuadradoVerdeLiso(new Posicao(3,3)));
+       this.add(new QuadradoVerdeLiso(new Posicao(3,5)));
+       this.add(new QuadradoVerdeLiso(new Posicao(3,7)));
+       this.add(new QuadradoVerdeLiso(new Posicao(3,9)));
+       this.add(new QuadradoVerdeLiso(new Posicao(4,2)));
+       this.add(new QuadradoVerdeLiso(new Posicao(4,4)));
+       this.add(new QuadradoVerdeLiso(new Posicao(4,6)));
+       this.add(new QuadradoVerdeLiso(new Posicao(4,8)));
+       this.add(new QuadradoVerdeLiso(new Posicao(4,10)));
+       this.add(new QuadradoVerdeLiso(new Posicao(5,3)));
+       this.add(new QuadradoVerdeLiso(new Posicao(5,5)));
+       this.add(new QuadradoVerdeLiso(new Posicao(5,7)));
+       this.add(new QuadradoVerdeLiso(new Posicao(5,9)));
+       this.add(new QuadradoVerdeLiso(new Posicao(6,2)));
+       this.add(new QuadradoVerdeLiso(new Posicao(6,4)));
+       this.add(new QuadradoVerdeLiso(new Posicao(6,6)));
+       this.add(new QuadradoVerdeLiso(new Posicao(6,8)));
+       this.add(new QuadradoVerdeLiso(new Posicao(6,10)));
+       this.add(new QuadradoVerdeLiso(new Posicao(7,3)));
+       this.add(new QuadradoVerdeLiso(new Posicao(7,5)));
+       this.add(new QuadradoVerdeLiso(new Posicao(7,7)));
+       this.add(new QuadradoVerdeLiso(new Posicao(7,9)));
+       this.add(new QuadradoVerdeLiso(new Posicao(8,2)));
+       this.add(new QuadradoVerdeLiso(new Posicao(8,4)));
+       this.add(new QuadradoVerdeLiso(new Posicao(8,6)));
+       this.add(new QuadradoVerdeLiso(new Posicao(8,8)));
+       this.add(new QuadradoVerdeLiso(new Posicao(8,10)));
+       this.add(new QuadradoVerdeLiso(new Posicao(9,3)));
+       this.add(new QuadradoVerdeLiso(new Posicao(9,5)));
+       this.add(new QuadradoVerdeLiso(new Posicao(9,7)));
+       this.add(new QuadradoVerdeLiso(new Posicao(9,9)));
+       this.add(new QuadradoVerdeLiso(new Posicao(10,2)));
+       this.add(new QuadradoVerdeLiso(new Posicao(10,4)));
+       this.add(new QuadradoVerdeLiso(new Posicao(10,6)));
+       this.add(new QuadradoVerdeLiso(new Posicao(10,8)));
+       this.add(new QuadradoVerdeLiso(new Posicao(10,10)));
+       
+       // Adicionando Robos
+       this.add(new RoboVermelho(new Posicao(11,6)));
+       this.add(new RoboVerde(new Posicao(6,1)));
+       this.add(new RoboAzul(new Posicao(6,11)));     
+       this.add(new RoboAmarelo(new Posicao(1,6)));
+       
+       // Adicionando Colecionaveis
+       this.add(new FrutaColecionavel(new Posicao(1,1)));
+       this.add(new FrutaColecionavel(new Posicao(11,11)));
+       this.add(new FrutaColecionavel(new Posicao(1,11)));
+       this.add(new FrutaColecionavel(new Posicao(11,1))); 
     }
     
 }
