@@ -18,6 +18,7 @@ import Modelo.QuadradoVerdeLiso;
 import Modelo.QuadradoVermelho;
 import Modelo.QuadradoVermelhoLosango;
 import Modelo.RecompensaFase2;
+import Modelo.RecompensaFase3;
 import Modelo.RecompensaFase4;
 import Modelo.RoboAmarelo;
 import Modelo.RoboAzul;
@@ -53,6 +54,7 @@ public class Fase extends ArrayList<Elemento>{
         
         
         //adicionando as frutas
+        
         this.add(new FrutaColecionavel(new Posicao(1,1)));
         this.add(new FrutaColecionavel(new Posicao(1,11)));
         this.add(new FrutaColecionavel(new Posicao(11,1)));
@@ -230,9 +232,11 @@ public class Fase extends ArrayList<Elemento>{
         this.add(new QuadradoVerde(new Posicao(0,12)));
         this.add(new QuadradoVerde(new Posicao(12,0)));
         this.add(new QuadradoVerde(new Posicao(12,12)));
-        this.add(new FrutaColecionavel(new Posicao(1,2)));
-        
-        this.add(new FrutaColecionavel(new Posicao(1,1)));
+                
+        this.add(new RecompensaFase3(new Posicao(6,1)));
+        this.add(new RecompensaFase3(new Posicao(6,3)));
+        this.add(new RecompensaFase3(new Posicao(6,9)));
+        this.add(new RecompensaFase3(new Posicao(6,11)));
          
          
         //borda vermelha
@@ -262,6 +266,10 @@ public class Fase extends ArrayList<Elemento>{
             this.add(new QuadradoVermelhoLosango(new Posicao(4,i)));
         for(int i=5;i<=8;i++)
             this.add(new QuadradoVermelhoLosango(new Posicao(8,i)));
+        this.add(new RoboAzul(new Posicao(7,1)));
+        this.add(new RoboAmarelo(new Posicao(7,3)));
+        this.add(new RoboVerde(new Posicao(5,9)));
+        this.add(new RoboVermelho(new Posicao(5,11)));
         
         
     }

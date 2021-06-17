@@ -124,7 +124,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
                 nivelFase=3;
             }
             //TODO concertar isso
-            if(!this.cControle.hasColecionaveisAinda(eElementos)&&nivelFase==3){
+            if(!this.cControle.hasRecompensaFase3(eElementos)&&nivelFase==3){
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
                 hHero.setPosicao(5,6);
