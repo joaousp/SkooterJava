@@ -18,6 +18,7 @@ public class RoboVerde extends Elemento {
         super("robo_verde.png");
         this.setPosicao(umaPosicao);
         bTransponivel=false;
+        bMortal=true;
     }
     public void autoDesenho(){
         Random r=new Random();

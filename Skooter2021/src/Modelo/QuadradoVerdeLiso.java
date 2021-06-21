@@ -26,7 +26,7 @@ public class QuadradoVerdeLiso extends Elemento {
 
         if(!Desenhador.getTelaDoJogo().ehPosicaoValidaRelativaAUmPersonagem(this)){
             //TODO apagar aqui;
-            setPosicao(new Posicao(0,0));
+           Desenhador.getTelaDoJogo().removeElemento(this);
         }
 
         super.autoDesenho();

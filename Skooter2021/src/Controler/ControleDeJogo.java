@@ -46,6 +46,7 @@ public class ControleDeJogo {
             if(!eTemp.isbTransponivel()){
                 
                 if(eTemp.getPosicao().estaNaMesmaPosicao(p)) {
+                    
                     if(eTemp.ispMovivel()){
                         
                      switch (tecla){
@@ -148,7 +149,9 @@ public class ControleDeJogo {
             eTemp = e.get(i); /*Pega o i-esimo elemento do jogo*/
 
             if(!eTemp.isbTransponivel()){
+                
                 if(eTemp.getPosicao().estaNaMesmaPosicao(p)) {
+                    
                     if(eTemp.isbMortal()){
                         e.remove(eTemp);
                         return false;

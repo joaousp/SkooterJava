@@ -14,6 +14,7 @@ import Auxiliar.Posicao;
  */
 public class QuadradoVerde extends Elemento {
     
+    
     public QuadradoVerde(Posicao umaPosicao) {
         super("quadradoVerde.png");
         this.setPosicao(umaPosicao);
@@ -26,7 +27,9 @@ public class QuadradoVerde extends Elemento {
         
         if(!Desenhador.getTelaDoJogo().ehPosicaoValidaRelativaAUmPersonagem(this)){
             //TODO apagar aqui;
-            setPosicao(new Posicao(0,0));
+            //setPosicao(new Posicao(0,0));
+            Desenhador.getTelaDoJogo().removeElemento(this);
+            
             
         }
 

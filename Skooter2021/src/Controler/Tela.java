@@ -86,9 +86,10 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
         
         /*Aqui podem ser inseridos novos processamentos de controle*/
         if (!this.eElementos.isEmpty()) {
-            this.cControle.desenhaTudo(eElementos);
+            
             this.cControle.processaTudo(eElementos);
             
+            this.cControle.desenhaTudo(eElementos);
             if (!cControle.ehPosicaoMortal(this.eElementos,hHero.getPosicao())) {
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
