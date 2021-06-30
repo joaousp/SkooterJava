@@ -100,8 +100,8 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
                 eElementos = minhaFase;
                 nivelFase=1;
             }
-            //TODO mudar hasColecionaveisAinda
-            if(!this.cControle.hasColecionaveisAinda(eElementos)&&nivelFase==1){
+            //TODO mudar hasRecompensasAinda
+            if(!this.cControle.hasRecompensasAinda(eElementos)&&nivelFase==1){
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
                 hHero.setPosicao(5,5 );
@@ -113,7 +113,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
                 
             }
             
-            if(!this.cControle.hasRecompensaFase2(eElementos)&&nivelFase==2){
+            if(!this.cControle.hasRecompensasAinda(eElementos)&&nivelFase==2){
                      
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); 
@@ -125,7 +125,7 @@ public class Tela extends javax.swing.JFrame implements MouseListener, KeyListen
                 nivelFase=3;
             }
             //TODO concertar isso
-            if(!this.cControle.hasRecompensaFase3(eElementos)&&nivelFase==3){
+            if(!this.cControle.hasRecompensasAinda(eElementos)&&nivelFase==3){
                 this.eElementos.clear();
                 hHero = new Hero("skooter_hero.png"); /* https://www.online-image-editor.com/ */
                 hHero.setPosicao(5,6);

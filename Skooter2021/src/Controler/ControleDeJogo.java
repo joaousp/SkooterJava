@@ -3,9 +3,7 @@ package Controler;
 import Modelo.Elemento;
 import Modelo.Hero;
 import Auxiliar.Posicao;
-import Modelo.FrutaColecionavel;
-import Modelo.RecompensaFase2;
-import Modelo.RecompensaFase3;
+import Modelo.Recompensa;
 
 import java.util.ArrayList;
 
@@ -180,11 +178,11 @@ public class ControleDeJogo {
     }
       
       //TODO mudar o instanceof
-      public boolean hasColecionaveisAinda(ArrayList<Elemento> e){
+      public boolean hasRecompensasAinda(ArrayList<Elemento> e){
             Elemento eTemp;
             for(int i = 1; i < e.size(); i++){
                 eTemp = e.get(i); /*Pega o i-esimo elemento do jogo*/
-                if(eTemp instanceof FrutaColecionavel){
+                if(eTemp instanceof Recompensa){
                     //System.out.println("Achei fruta");
                     return true;
                 }
@@ -192,31 +190,7 @@ public class ControleDeJogo {
             //System.out.println("Acabou");
             return false;
       }
-       public boolean hasRecompensaFase2(ArrayList<Elemento> e){
-            Elemento eTemp;
-            for(int i = 1; i < e.size(); i++){
-                eTemp = e.get(i); /*Pega o i-esimo elemento do jogo*/
-                if(eTemp instanceof RecompensaFase2){
-                    //System.out.println("Achei fruta");
-                    return true;
-                }
-            }
-            //System.out.println("Acabou");
-            return false;
-      }
-        public boolean hasRecompensaFase3(ArrayList<Elemento> e){
-            Elemento eTemp;
-            for(int i = 1; i < e.size(); i++){
-                eTemp = e.get(i); /*Pega o i-esimo elemento do jogo*/
-                if(eTemp instanceof RecompensaFase3){
-                    //System.out.println("Achei fruta");
-                    return true;
-                }
-            }
-            //System.out.println("Acabou");
-            return false;
-      }
-       
+    
           
 }
     
